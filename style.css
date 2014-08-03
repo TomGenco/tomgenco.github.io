@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  min-width: 600px;
+  background-color: #ddd;
+  font-family: 'Comic Neue', sans-serif;
+}
+
+/* --- Heading --- */
+
+#header {
+  position: fixed;
+  top: 0px;
+  -moz-box-shadow: 0px 2px 5px rgba(50,50,50,.5);
+  -webkit-box-shadow: 0px 2px 5px rgba(50,50,50,.5);
+  box-shadow: 0px 2px 5px rgba(50,50,50,.5);
+}
+
+#header table {
+  background-color: #0089fa;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#nav td a {
+  color: white;
+  padding-top: 5px;
+  height: 40px;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(50,50,50,.5);
+  overflow: hidden;
+  font-weight: 100;
+  font-size: 24pt;
+  display: block;
+  text-decoration: none;
+}
+
+#home {
+  border-top: 6px solid #0089fa;
+}
+
+#info {
+  border-top: 6px solid #00a753;
+}
+
+#proj {
+  border-top: 6px solid #ff002b;
+}
+
+#link {
+  border-top: 6px solid #ffa900;
+}
+
+#cont {
+  border-top: 6px solid #d100ff;
+}
+
+.current {
+  font-weight: 300;
+}
+
+#nav td:hover {
+  -moz-box-shadow: 0px 2px 2px #111;
+  -webkit-box-shadow: 0px 2px 2px #111;
+  box-shadow: 0px 2px 2px #111;
+  color: #eee;
+}
+
+/* --- Main Content --- */
+
+#page {
+  background-color: #eee;
+  margin: 70px auto;
+  width: 60%;
+  -moz-box-shadow: 2px 2px 5px rgba(50,50,50,.5);
+  -webkit-box-shadow: 2px 2px 5px rgba(50,50,50,.5);
+  box-shadow: 2px 2px 5px rgba(50,50,50,.5);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+#content {
+  margin: 0;
+  padding: 40px;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 3em;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Footer --- */
+
+#footer {
+  padding: 10px;
+  background-color: #eee;
+  text-align: center;
+  font-size: .85em;
+  color: #555;
+  -moz-box-shadow: 0px 0px 2px rgba(50,50,50,.5);
+  -webkit-box-shadow: 0px 0px 2px rgba(50,50,50,.5);
+  box-shadow: 0px 0px 2px rgba(50,50,50,.5);
+}
+
+/* --- Font Stack --- */
+
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('font/comic-neue.eot');
+  src: url('font/comic-neue.eot#iefix') format('embedded-opentype'),
+       url('font/comic-neue.woff')      format('woff'),
+       url('font/comic-neue.ttf')       format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('font/comic-neue-light.eot');
+  src: url('font/comic-neue-light.eot#iefix') format('embedded-opentype'),
+       url('font/comic-neue-light.woff')      format('woff'),
+       url('font/comic-neue-light.ttf')       format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('font/comic-neue-bold.eot');
+  src: url('font/comic-neue-bold.eot#iefix') format('embedded-opentype'),
+       url('font/comic-neue-bold.woff')      format('woff'),
+       url('font/comic-neue-bold.ttf')       format('truetype');
+  font-weight: 700;
+}
