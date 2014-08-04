@@ -35,23 +35,23 @@ body {
 }
 
 #home {
-  border-top: 6px solid #0089fa;
+  border-top: 6px solid #2d4a5c;
 }
 
 #info {
-  border-top: 6px solid #00a753;
+  border-top: 6px solid #42b26a;
 }
 
 #proj {
-  border-top: 6px solid #ff002b;
+  border-top: 6px solid #e27345;
 }
 
 #link {
-  border-top: 6px solid #ffa900;
+  border-top: 6px solid #efbf4e;
 }
 
 #cont {
-  border-top: 6px solid #d100ff;
+  border-top: 6px solid #df4c76;
 }
 
 .current {
