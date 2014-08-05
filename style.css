@@ -67,6 +67,11 @@ body {
   -webkit-box-shadow: 0 -6px rgba(223,76,118,1);
   box-shadow: 0 -6px rgba(223,76,118,1);
 }
+#home a:hover {background-color: rgba(75,124,154,1);}
+#info a:hover {background-color: rgba(66,178,106,1);}
+#proj a:hover {background-color: rgba(226,115,69,1);}
+#link a:hover {background-color: rgba(239,191,78,1);}
+#cont a:hover {background-color: rgba(223,76,118,1);}
 
 #nav th:hover {
   -moz-box-shadow: 0px 0px 6px rgba(17,17,17,1);
