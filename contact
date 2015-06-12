@@ -4,18 +4,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Tom Genco's Personal Website.">
-    <title>Tom Genco - Projects</title>
+    <title>Tom Genco - Contact</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" type="image/png" href="image/favicon.png">
   </head>
   <body>
     <nav>
       <ul>
-        <li><a href="index.html">Tom</a></li>
-        <li><a href="info.html">Info</a></li>
-        <li class="active"><a href="projects.html">Projects</a></li>
-        <li><a href="links.html">Links</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/">Tom</a></li>
+        <li><a href="info">Info</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="links">Links</a></li>
+        <li class="active"><a href="#">Contact</a></li>
       </ul>
     </nav>
     <main>
