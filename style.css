@@ -42,8 +42,8 @@ nav a:hover {
 }
 
 main {
-  margin: auto;
-  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
   max-width: 960px;
   text-align: left;
 }
@@ -106,6 +106,7 @@ p {
 
 footer {
   display: inline-block;
+  margin-top: 10px;
   padding: 10px;
   background-color: rgb(80, 80, 80);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
