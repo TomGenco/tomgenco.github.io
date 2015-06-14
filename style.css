@@ -4,13 +4,11 @@ body {
   background-image: url("image/grey.png");
   background-attachment: fixed;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
   text-align: center; /* for the footer */
 }
 
-/* --- Navigation Bar --- */
-
 nav {
+  margin-bottom: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,.50);
   background-color: rgb(80, 80, 80);
 }
@@ -34,7 +32,6 @@ nav li.active a {
 nav a {
   color: white;
   display: block;
-  font-weight: 100;
   font-size: 32pt;
   padding: 10px;
 }
@@ -44,21 +41,50 @@ nav a:hover {
   text-decoration: none;
 }
 
-/* --- Main Content --- */
-
 main {
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 960px;
   text-align: left;
 }
 
-article {
-  background-color: rgb(240, 240, 240);
-  margin: 20px auto;
-  padding: 7.84px 40px 20px 40px;
-  max-width: 960px;
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,.50);
+aside {
+  float: left;
+  width: 200px;
+  vertical-align: top;
+  padding: 10px;
+  background-color: rgb(80, 80, 80);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .50);
+  color: white;
 }
 
-/* --- Text Formatting --- */
+aside h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 24pt;
+}
+
+aside hr {
+  border: 1px solid;
+  margin: 4px;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside li {
+  margin: 10px 0;
+}
+
+article {
+  margin-left: 230px;
+  padding: 20px;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,.50);
+}
 
 h1 {
   font-weight: 100;
@@ -78,8 +104,6 @@ p {
   text-align: justify;
 }
 
-/* --- Footer --- */
-
 footer {
   display: inline-block;
   padding: 10px;
@@ -92,33 +116,4 @@ footer {
 
 footer a {
   color: lightgray;
-}
-
-/* --- Font Stack --- */
-
-@font-face {
-  font-family: 'Comic Neue';
-  src: url('font/comic-neue.eot');
-  src: url('font/comic-neue.eot#iefix') format('embedded-opentype'),
-       url('font/comic-neue.woff')      format('woff'),
-       url('font/comic-neue.ttf')       format('truetype');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Comic Neue';
-  src: url('font/comic-neue-light.eot');
-  src: url('font/comic-neue-light.eot#iefix') format('embedded-opentype'),
-       url('font/comic-neue-light.woff')      format('woff'),
-       url('font/comic-neue-light.ttf')       format('truetype');
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Comic Neue';
-  src: url('font/comic-neue-bold.eot');
-  src: url('font/comic-neue-bold.eot#iefix') format('embedded-opentype'),
-       url('font/comic-neue-bold.woff')      format('woff'),
-       url('font/comic-neue-bold.ttf')       format('truetype');
-  font-weight: 700;
 }
