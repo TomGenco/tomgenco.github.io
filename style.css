@@ -1,108 +1,99 @@
-html {
-  height: 100%;
-}
-
 body {
-  margin: 0;
+  margin: 10px;
   min-width: 600px;
-  height: 100%;
   background-image: url("image/grey.png");
   background-attachment: fixed;
-  font-family: 'Comic Neue', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center; /* for the footer */
 }
 
-/* --- Navigation Bar --- */
+nav {
+  margin-bottom: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,.50);
+  background-color: rgb(80, 80, 80);
+}
 
-#nav {
+nav ul {
+  display: table;
   width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  box-shadow: 0px -2px 5px 4px rgba(0,0,0,.85);
-}
-
-#nav th {
   padding: 0;
-}
-
-#nav th a {
-  display: block;
-  padding: 16px 10px 10px 10px;
-  overflow: hidden;
-  color: rgba(255,255,255,1);
-  font-weight: 100;
-  font-size: 32pt;
-  text-decoration: none;
-  text-shadow: 2px 2px 2px rgba(50,50,50,.5);
-}
-
-#home a {box-shadow: inset 0 6px rgba(75,124,154,1);}
-#info a {box-shadow: inset 0 6px rgba(66,178,106,1);}
-#proj a {box-shadow: inset 0 6px rgba(226,115,69,1);}
-#link a {box-shadow: inset 0 6px rgba(239,191,78,1);}
-#cont a {box-shadow: inset 0 6px rgba(223,76,118,1);}
-
-#home a:hover {background-color: rgba(75,124,154,1);}
-#info a:hover {background-color: rgba(66,178,106,1);}
-#proj a:hover {background-color: rgba(226,115,69,1);}
-#link a:hover {background-color: rgba(239,191,78,1);}
-#cont a:hover {background-color: rgba(223,76,118,1);}
-
-#nav th:hover {box-shadow: 0px 0px 6px rgba(17,17,17,1);}
-
-/* --- Main Content --- */
-
-#page-margin {
-  margin: 40px;
-  min-height: 100%;
-}
-
-#page {
-  background-color: rgba(255,255,255,1);
-  margin: auto;
-  max-width: 960px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,.85);
-}
-
-#content {
   margin: 0;
-  padding: 40px;
 }
 
-#top {
-    margin: 0;
+nav li {
+  display: table-cell;
 }
 
-#top a {
+nav li.active a {
+  background-color: rgb(240, 240, 240);
+  color: rgb(80, 80, 80);
+}
+
+nav a {
+  color: white;
   display: block;
+  font-size: 32pt;
+  padding: 10px;
+}
+
+nav a:hover {
+  box-shadow: 0 0 20px rgba(0,0,0,.50);
+  text-decoration: none;
+}
+
+main {
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 960px;
+  text-align: left;
+}
+
+aside {
+  float: left;
+  width: 200px;
+  vertical-align: top;
+  padding: 10px;
+  background-color: rgb(80, 80, 80);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .50);
+  color: white;
+}
+
+aside h1 {
+  margin: 0;
   text-align: center;
-  padding: 5px;
-  background-color: rgba(229,229,229,1);
-  border-radius: 10px;
+  font-size: 24pt;
 }
 
-#top a:hover {
-  background-color: rgba(221,221,221,1);
+aside hr {
+  border: 1px solid;
+  margin: 4px;
 }
 
-/* --- Text Formatting --- */
+aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside li {
+  margin: 10px 0;
+}
+
+article {
+  margin-left: 230px;
+  padding: 20px;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,.50);
+}
 
 h1 {
   font-weight: 100;
-  font-size: 5em;
-  margin: 0;
-}
-
-hr {
-  border: none;
-  height: 1px;
-  width: 100%;
-  background-color: rgba(0,0,0,.25);
-
+  font-size: 3em;
 }
 
 a {
   text-decoration: none;
+  color: gray;
 }
 
 a:hover {
@@ -113,43 +104,16 @@ p {
   text-align: justify;
 }
 
-/* --- Footer --- */
-
 footer {
-  padding-top: 10px;
-  background-color: rgba(255,255,255,1);
-  box-shadow: inset 0 5px 6px -5px rgba(0,0,0,.5);
-  padding-bottom: 10px;
+  display: inline-block;
+  padding: 10px;
+  background-color: rgb(80, 80, 80);
+  box-shadow: 0 0 20px rgba(0,0,0,.50);
   text-align: center;
   font-size: 80%;
-  color: rgba(85,85,85,1);
+  color: white;
 }
 
-/* --- Font Stack --- */
-
-@font-face {
-  font-family: 'Comic Neue';
-  src: url('font/comic-neue.eot');
-  src: url('font/comic-neue.eot#iefix') format('embedded-opentype'),
-       url('font/comic-neue.woff')      format('woff'),
-       url('font/comic-neue.ttf')       format('truetype');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Comic Neue';
-  src: url('font/comic-neue-light.eot');
-  src: url('font/comic-neue-light.eot#iefix') format('embedded-opentype'),
-       url('font/comic-neue-light.woff')      format('woff'),
-       url('font/comic-neue-light.ttf')       format('truetype');
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Comic Neue';
-  src: url('font/comic-neue-bold.eot');
-  src: url('font/comic-neue-bold.eot#iefix') format('embedded-opentype'),
-       url('font/comic-neue-bold.woff')      format('woff'),
-       url('font/comic-neue-bold.ttf')       format('truetype');
-  font-weight: 700;
+footer a {
+  color: lightgray;
 }
