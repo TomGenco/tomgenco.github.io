@@ -45,8 +45,7 @@ nav a:hover {
   text-decoration: none;
 }
 
-main {
-  display: block;
+#content-area {
   margin: 0 auto;
   max-width: 960px;
   text-align: left;
@@ -86,6 +85,7 @@ article {
   padding: 20px;
   background-color: rgb(240, 240, 240);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
+  margin-bottom: 10px;
 }
 
 article.has-sidebar {
@@ -112,7 +112,6 @@ p {
 
 footer {
   display: inline-block;
-  margin-top: 10px;
   padding: 10px;
   background-color: rgb(80, 80, 80);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
