@@ -10,10 +10,14 @@ body {
   text-align: center; /* for the footer and nav bar*/
 }
 
+header, footer, aside {
+  background-color: rgb(80, 80, 80);
+  box-shadow: 0 0 20px rgba(0,0,0,.50);
+  color: white;
+}
+
 header {
   margin: 0 auto 10px auto;
-  box-shadow: 0 0 20px rgba(0,0,0,.50);
-  background-color: rgb(80, 80, 80);
 }
 
 nav ul {
@@ -55,9 +59,6 @@ aside {
   float: left;
   width: 200px;
   padding: 10px;
-  background-color: rgb(80, 80, 80);
-  box-shadow: 0 0 20px rgba(0, 0, 0, .50);
-  color: white;
 }
 
 aside h1 {
@@ -88,7 +89,7 @@ article {
   margin-bottom: 10px;
 }
 
-article.has-sidebar {
+.has-sidebar main {
   margin-left: 230px;
 }
 
@@ -110,11 +111,7 @@ a:hover {
 footer {
   display: inline-block;
   padding: 10px;
-  background-color: rgb(80, 80, 80);
-  box-shadow: 0 0 20px rgba(0,0,0,.50);
-  text-align: center;
   font-size: .8em;
-  color: white;
 }
 
 footer a {
