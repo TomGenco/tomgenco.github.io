@@ -10,7 +10,7 @@ body {
   text-align: center; /* for the footer */
 }
 
-nav {
+header {
   margin: 0 auto 10px auto;
   box-shadow: 0 0 20px rgba(0,0,0,.50);
   background-color: rgb(80, 80, 80);
