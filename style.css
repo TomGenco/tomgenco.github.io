@@ -55,8 +55,19 @@ nav a:hover {
   text-align: left;
 }
 
+article {
+  padding: 20px;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 0 0 20px rgba(0,0,0,.50);
+  margin-bottom: 10px;
+}
+
+.has-sidebar main {
+  margin-right: 230px;
+}
+
 aside {
-  float: left;
+  float: right;
   width: 200px;
   padding: 10px;
 }
@@ -80,17 +91,6 @@ aside ul {
 
 aside li {
   margin: 10px 0;
-}
-
-article {
-  padding: 20px;
-  background-color: rgb(240, 240, 240);
-  box-shadow: 0 0 20px rgba(0,0,0,.50);
-  margin-bottom: 10px;
-}
-
-.has-sidebar main {
-  margin-left: 230px;
 }
 
 h1 {
