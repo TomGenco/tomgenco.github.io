@@ -7,10 +7,10 @@ body {
   background-attachment: fixed;
   font-family: 'Montserrat', sans-serif;
   color: rgb(80, 80, 80);
-  text-align: center; /* for the footer */
+  text-align: center; /* for the footer and nav bar*/
 }
 
-nav {
+header {
   margin: 0 auto 10px auto;
   box-shadow: 0 0 20px rgba(0,0,0,.50);
   background-color: rgb(80, 80, 80);
@@ -36,7 +36,7 @@ nav li.active a {
 nav a {
   color: white;
   display: block;
-  font-size: 24pt;
+  font-size: 2em;
   padding: 10px;
 }
 
@@ -45,8 +45,7 @@ nav a:hover {
   text-decoration: none;
 }
 
-main {
-  display: block;
+#content-area {
   margin: 0 auto;
   max-width: 960px;
   text-align: left;
@@ -64,7 +63,7 @@ aside {
 aside h1 {
   margin: 0;
   text-align: center;
-  font-size: 24pt;
+  font-size: 1.5em;
 }
 
 aside hr {
@@ -86,6 +85,7 @@ article {
   padding: 20px;
   background-color: rgb(240, 240, 240);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
+  margin-bottom: 10px;
 }
 
 article.has-sidebar {
@@ -93,7 +93,8 @@ article.has-sidebar {
 }
 
 h1 {
-  font-weight: 100;
+  margin: 0 0 .5em 0;
+  font-weight: normal;
   font-size: 3em;
 }
 
@@ -106,18 +107,13 @@ a:hover {
   text-decoration: underline;
 }
 
-p {
-  text-align: justify;
-}
-
 footer {
   display: inline-block;
-  margin-top: 10px;
   padding: 10px;
   background-color: rgb(80, 80, 80);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
   text-align: center;
-  font-size: 80%;
+  font-size: .8em;
   color: white;
 }
 
