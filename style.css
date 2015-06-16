@@ -48,7 +48,7 @@ header, footer, aside {
 }
 
 header {
-  margin: 0 auto 10px auto;
+  margin: 0 auto 10px;
 }
 
 header p {
@@ -68,7 +68,7 @@ nav li {
   display: table-cell;
 }
 
-nav li.active a {
+.active a {
   background-color: rgb(240, 240, 240);
   color: rgb(80, 80, 80);
 }
@@ -90,6 +90,10 @@ nav a:hover {
   margin: 0 auto;
   max-width: 960px;
   text-align: left;
+}
+
+main {
+  display: block;
 }
 
 article {
