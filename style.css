@@ -5,7 +5,7 @@ body {
   max-width: 1900px;
   background-image: url("image/grey.png");
   background-attachment: fixed;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, Verdana, sans-serif;
   color: rgb(80, 80, 80);
   text-align: center; /* for the footer and nav bar*/
 }
