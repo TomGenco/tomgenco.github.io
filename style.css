@@ -10,6 +10,37 @@ body {
   text-align: center; /* for the footer and nav bar*/
 }
 
+h1, h2, h3, p, a {
+  margin: 0 0 .5em;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+p {
+  text-indent: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 header, footer, aside {
   background-color: rgb(80, 80, 80);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
@@ -47,6 +78,7 @@ nav a {
   display: block;
   font-size: 2em;
   padding: 10px;
+  margin: 0;
 }
 
 nav a:hover {
@@ -65,6 +97,8 @@ article {
   background-color: rgb(240, 240, 240);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
   margin-bottom: 10px;
+  font-weight: normal;
+  line-height: 1.6em;
 }
 
 .has-sidebar main {
@@ -81,6 +115,7 @@ aside h1 {
   margin: 0;
   text-align: center;
   font-size: 1.5em;
+  font-weight: normal;
 }
 
 aside hr {
@@ -96,21 +131,6 @@ aside ul {
 
 aside li {
   margin: 10px 0;
-}
-
-h1 {
-  margin: 0 0 .5em 0;
-  font-weight: normal;
-  font-size: 3em;
-}
-
-a {
-  text-decoration: none;
-  color: gray;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 footer {
