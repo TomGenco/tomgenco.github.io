@@ -20,6 +20,11 @@ header {
   margin: 0 auto 10px auto;
 }
 
+header p {
+  margin: 0;
+  padding: 5px;
+}
+
 nav ul {
   display: table;
   table-layout: fixed;
@@ -49,7 +54,7 @@ nav a:hover {
   text-decoration: none;
 }
 
-#content-area {
+#content {
   margin: 0 auto;
   max-width: 960px;
   text-align: left;
