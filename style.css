@@ -5,7 +5,7 @@ body {
   max-width: 1900px;
   background-image: url("image/grey.png");
   background-attachment: fixed;
-  font-family: Montserrat, Verdana, sans-serif;
+  font-family: Raleway, Verdana, sans-serif;
   color: rgb(80, 80, 80);
   text-align: center; /* for the footer and nav bar*/
 }
@@ -34,20 +34,20 @@ p {
 
 a {
   text-decoration: none;
-  color: gray;
+  color: rgb(170, 170, 170);
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-header, nav, footer, aside {
+header, nav, aside, footer {
   background-color: rgb(80, 80, 80);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
   color: white;
 }
 
-header, nav {
+header, nav, footer {
   margin: 10px 0;
 }
 
@@ -89,8 +89,8 @@ nav a:hover {
 }
 
 #content {
-  margin: 0 auto;
-  max-width: 960px;
+  margin: 10px auto;
+  max-width: 1400px;
   text-align: left;
 }
 
@@ -99,6 +99,7 @@ main {
 }
 
 article {
+  overflow: hidden;
   padding: 20px;
   background-color: rgb(240, 240, 240);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
@@ -107,14 +108,11 @@ article {
   line-height: 1.6em;
 }
 
-.has-sidebar main {
-  margin-right: 230px;
-}
-
 aside {
-  float: right;
-  width: 200px;
+  float: left;
+  margin: 0 10px 0 0;
   padding: 10px;
+  width: 200px;
 }
 
 aside h1 {
@@ -139,12 +137,30 @@ aside li {
   margin: 10px 0;
 }
 
-footer {
-  display: inline-block;
-  padding: 10px;
-  font-size: .8em;
+#related {
+  float: right;
+  margin: 0 0 0 10px;
 }
 
-footer a {
-  color: lightgray;
+footer {
+  display: flex;
+  padding: 10px;
+}
+
+footer p {
+  margin-bottom: 0;
+  font-size: .8em;
+  text-indent: 0;
+}
+
+#left {
+  text-align: left;
+}
+
+#center {
+  flex: 1 0;
+}
+
+#right {
+  text-align: right;
 }
