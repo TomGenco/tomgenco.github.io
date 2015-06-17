@@ -52,7 +52,7 @@ footerRawgitLink.setURL = function() {
 	if (document.URL == currentBaseUrl)
 		this.setAttribute("href", urlStart + "index.html");
 	else
-		this.setAttribute("href", urlStart + document.URL.slice(currentBaseUrl.length));
+		this.setAttribute("href", urlStart + document.URL.slice(currentBaseUrl.length) + ".html");
 }
 
 
