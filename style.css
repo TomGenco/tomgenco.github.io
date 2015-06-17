@@ -143,6 +143,7 @@ aside li {
 }
 
 footer {
+  display: -webkit-flex;
   display: flex;
   padding: 10px;
 }
@@ -158,6 +159,7 @@ footer p {
 }
 
 #center {
+  -webkit-flex: 1 0;
   flex: 1 0;
 }
 
