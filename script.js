@@ -31,7 +31,7 @@ function getCookie(name) {
 			return pair[i];
 	};
 
-	return "";
+	return false;
 }
 
 window.onload = function() {

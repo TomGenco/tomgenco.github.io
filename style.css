@@ -34,20 +34,20 @@ p {
 
 a {
   text-decoration: none;
-  color: gray;
+  color: rgb(170, 170, 170);
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-header, nav, footer, aside {
+header, nav, aside, footer {
   background-color: rgb(80, 80, 80);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
   color: white;
 }
 
-header, nav {
+header, nav, footer {
   margin: 10px 0;
 }
 
@@ -89,7 +89,7 @@ nav a:hover {
 }
 
 #content {
-  margin: 0 auto;
+  margin: 10px auto;
   max-width: 960px;
   text-align: left;
 }
@@ -99,6 +99,7 @@ main {
 }
 
 article {
+  overflow: hidden;
   padding: 20px;
   background-color: rgb(240, 240, 240);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
@@ -107,14 +108,11 @@ article {
   line-height: 1.6em;
 }
 
-.has-sidebar main {
-  margin-right: 230px;
-}
-
 aside {
-  float: right;
-  width: 200px;
+  float: left;
+  margin: 0 10px 0 0;
   padding: 10px;
+  width: 200px;
 }
 
 aside h1 {
@@ -139,12 +137,12 @@ aside li {
   margin: 10px 0;
 }
 
-footer {
-  display: inline-block;
-  padding: 10px;
-  font-size: .8em;
+#related {
+  float: right;
+  margin: 0 0 0 10px;
 }
 
-footer a {
-  color: lightgray;
+footer {
+  padding: 10px;
+  font-size: .8em;
 }
