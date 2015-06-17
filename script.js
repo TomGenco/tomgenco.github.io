@@ -1,4 +1,9 @@
-var headerMessage = document.getElementById('message');
+var showHeaderMessage = true;
+var headerMessageText = "Site is currently under construction. Expect constant changes to style, structure, and content. Click to dismiss";
+
+// ----- Header Message -----
+
+var headerMessage = document.getElementById("message");
 
 headerMessage.set = function(message) {
 	this.innerHTML = message;
@@ -9,11 +14,11 @@ headerMessage.get = function() {
 };
 
 headerMessage.show = function() {
-	this.removeAttribute('style');
+	this.removeAttribute("style");
 };
 
 headerMessage.hide = function() {
-	this.setAttribute('style', 'display:none');
+	this.setAttribute("style", "display:none");
 	document.cookie = "hideMessage=1";
 };
 
@@ -22,11 +27,11 @@ headerMessage.onclick = function() {
 };
 
 function getCookie(name) {
-	var cookies = document.cookie.split(';');
+	var cookies = document.cookie.split(";");
 	var pair;
 	
 	for (var i = 0; i < cookies.length; i++) {
-		pair = cookies[i].trim().split('=');
+		pair = cookies[i].trim().split("=");
 		if (pair[0] == name)
 			return pair[i];
 	};
@@ -34,11 +39,30 @@ function getCookie(name) {
 	return false;
 }
 
-window.onload = function() {
-	var cookies = document.cookie.split(';');
+// ----- Footer Rawgit link -----
 
-	headerMessage.set("Site is currently under construction. Expect constant changes to style, structure, and content. Click to dismiss");
+var footerRawgitLink = document.getElementById("rawgit-link");
+
+footerRawgitLink.setURL = function() {
+	var urlStart = "https://cdn.rawgit.com/TomGenco/tomgenco.github.io/dev/";
+	var currentBaseUrl = "http://tomgenco.com/";
+
+	console.log(currentBaseUrl.length);
+
+	if (document.URL == currentBaseUrl)
+		this.setAttribute("href", urlStart + "index.html");
+	else
+		this.setAttribute("href", urlStart + document.URL.slice(currentBaseUrl.length));
+}
+
+
+window.onload = function() {
+	var cookies = document.cookie.split(";");
 	
-	if (!getCookie("hideMessage"))
+	if (!getCookie("hideMessage") && showHeaderMessage) {
+		headerMessage.set(headerMessageText);
 		headerMessage.show();
+	}
+
+	footerRawgitLink.setURL();
 }
