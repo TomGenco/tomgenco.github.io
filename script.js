@@ -44,15 +44,15 @@ function getCookie(name) {
 var footerRawgitLink = document.getElementById("rawgit-link");
 
 footerRawgitLink.setURL = function() {
-	var urlStart = "https://cdn.rawgit.com/TomGenco/tomgenco.github.io/dev/";
+	var urlStart = "https://rawgit.com/TomGenco/tomgenco.github.io/dev/";
 	var currentBaseUrl = "http://tomgenco.com/";
 
-	console.log(currentBaseUrl.length);
+	this.removeAttribute("style");
 
 	if (document.URL == currentBaseUrl)
 		this.setAttribute("href", urlStart + "index.html");
 	else
-		this.setAttribute("href", urlStart + document.URL.slice(currentBaseUrl.length));
+		this.setAttribute("href", urlStart + document.URL.slice(currentBaseUrl.length) + ".html");
 }
 
 
@@ -64,5 +64,6 @@ window.onload = function() {
 		headerMessage.show();
 	}
 
-	footerRawgitLink.setURL();
+	if (document.URL.search("http://tomgenco.com/") == 0)
+		footerRawgitLink.setURL();
 }
