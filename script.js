@@ -4,6 +4,9 @@ var showHeaderMessage = true;
 var headerMessageText = "Site is currently under construction. " + 
 	"Expect constant changes to style, structure, and content.";
 
+// If `showHeaderMessage` at the top is set to true, and the session storage
+// key doesn't have a value "true", then a header will be shown that contains
+// content from `headerMessageText
 function headerMessageSetup() {
 	var message = $("#message");
 
@@ -18,6 +21,8 @@ function headerMessageSetup() {
 	});
 }
 
+// If the url starts with "http://tomgenco.com/", a link to a rendering of the
+// current page in the most recent commit in dev will appear
 function footerRawgitLinkSetup() {
 	var rawgit = $("#rawgit"),
 		urlStart = "https://rawgit.com/TomGenco/tomgenco.github.io/dev/",
@@ -34,7 +39,20 @@ function footerRawgitLinkSetup() {
 	}
 }
 
+function navigationSetup() {
+	var navLinks = $("nav li");
+
+	navLinks.on("click", function(event) {
+		event.preventDefault();
+		$("li.active").removeAttr("class");
+		$(this).attr("class", "active");
+		$("#content").remove();
+		$("body").load($(this).children().attr("href") + ".html #content");
+	});
+}
+
 $("document").ready(function() {
 	headerMessageSetup();
 	footerRawgitLinkSetup();
+	navigationSetup();
 });
