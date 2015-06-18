@@ -38,15 +38,27 @@ function footerRawgitLinkSetup() {
 }
 
 function navigationSetup() {
-	$("nav a:not(.active)").on("click", function(event) {
+
+	$("nav a").on("click", function(event) {
+		// Don't let the links actually function like links
 		event.preventDefault();
 
+		// Don't try to ajax the current page
+		if ($(this).attr("class") == "active")
+			return;
+
+		// What page do we want
 		var href = ($(this).attr("href") == "/") ? ("index.html") : ($(this).attr("href") + ".html");
 
 		console.log("will try to open: " + href);
 
+		// Change active to selected page
 		$(".active").removeAttr("class");
 		$(this).attr("class", "active");
+
+		// Replace Content
+		$("title").text($(this).text());
+		history.pushState(1, "test", "/" + href);
 		$("#content").load(href + " #content");
 	});
 }
