@@ -69,7 +69,7 @@ nav li {
   display: table-cell;
 }
 
-.active a {
+.active {
   background-color: rgb(240, 240, 240);
   color: rgb(80, 80, 80);
 }

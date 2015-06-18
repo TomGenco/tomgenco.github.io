@@ -1,5 +1,3 @@
-"use strict";
-
 var showHeaderMessage = true;
 var headerMessageText = "Site is currently under construction. " + 
 	"Expect constant changes to style, structure, and content.";
@@ -10,7 +8,7 @@ var headerMessageText = "Site is currently under construction. " +
 function headerMessageSetup() {
 	var message = $("#message");
 
-	if (showHeaderMessage && sessionStorage.getItem("headerDismissed") != "true") {
+	if (showHeaderMessage && !sessionStorage.getItem("headerDismissed")) {
 		message.text(headerMessageText + " Click to dismiss.");
 		message.removeAttr("style");
 	};
@@ -40,14 +38,16 @@ function footerRawgitLinkSetup() {
 }
 
 function navigationSetup() {
-	var navLinks = $("nav li");
-
-	navLinks.on("click", function(event) {
+	$("nav a:not(.active)").on("click", function(event) {
 		event.preventDefault();
-		$("li.active").removeAttr("class");
+
+		var href = ($(this).attr("href") == "/") ? ("index.html") : ($(this).attr("href") + ".html");
+
+		console.log("will try to open: " + href);
+
+		$(".active").removeAttr("class");
 		$(this).attr("class", "active");
-		$("#content").remove();
-		$("body").load($(this).children().attr("href") + ".html #content");
+		$("#content").load(href + " #content");
 	});
 }
 
