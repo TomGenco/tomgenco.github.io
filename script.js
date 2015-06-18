@@ -1,13 +1,14 @@
-"use strict";
-
 var showHeaderMessage = true;
 var headerMessageText = "Site is currently under construction. " + 
 	"Expect constant changes to style, structure, and content.";
 
+// If `showHeaderMessage` at the top is set to true, and the session storage
+// key doesn't have a value "true", then a header will be shown that contains
+// content from `headerMessageText
 function headerMessageSetup() {
 	var message = $("#message");
 
-	if (showHeaderMessage && sessionStorage.getItem("headerDismissed") != "true") {
+	if (showHeaderMessage && !sessionStorage.getItem("headerDismissed")) {
 		message.text(headerMessageText + " Click to dismiss.");
 		message.removeAttr("style");
 	};
@@ -18,6 +19,8 @@ function headerMessageSetup() {
 	});
 }
 
+// If the url starts with "http://tomgenco.com/", a link to a rendering of the
+// current page in the most recent commit in dev will appear
 function footerRawgitLinkSetup() {
 	var rawgit = $("#rawgit"),
 		urlStart = "https://rawgit.com/TomGenco/tomgenco.github.io/dev/",
@@ -34,7 +37,35 @@ function footerRawgitLinkSetup() {
 	}
 }
 
+function navigationSetup() {
+	$("nav a").on("click", function(event) {
+		// No ajax for anything but real page
+		if (document.URL.search("http://tomgenco.com") != 0)
+			return;
+
+		var href = $(this).attr("href");
+
+		// Don't let the links actually function like links
+		event.preventDefault();
+
+		// Don't try to ajax the current page
+		if ($(this).attr("class") == "active")
+			return;
+
+		// Change active to selected page
+		$(".active").removeAttr("class");
+		$(this).attr("class", "active");
+
+		// Replace Content
+		$("title").text($(this).text());
+		history.pushState(1, "test", 
+			"http://tomgenco.com/" + ((href == "index") ? "/" : href));
+		$("#content").load(href + " #content");
+	});
+}
+
 $("document").ready(function() {
 	headerMessageSetup();
 	footerRawgitLinkSetup();
+	navigationSetup();
 });
