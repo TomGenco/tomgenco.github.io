@@ -1,69 +1,37 @@
+"use strict";
+
 var showHeaderMessage = true;
-var headerMessageText = "Site is currently under construction. Expect constant changes to style, structure, and content. Click to dismiss";
+var headerMessageText = "Site is currently under construction. " + 
+	"Expect constant changes to style, structure, and content.";
 
-// ----- Header Message -----
+function headerMessageSetup() {
+	var message = $("#message");
 
-var headerMessage = document.getElementById("message");
-
-headerMessage.set = function(message) {
-	this.innerHTML = message;
-};
-
-headerMessage.get = function() {
-	return this.innerHTML;
-};
-
-headerMessage.show = function() {
-	this.removeAttribute("style");
-};
-
-headerMessage.hide = function() {
-	this.setAttribute("style", "display:none");
-	document.cookie = "hideMessage=1";
-};
-
-headerMessage.onclick = function() {
-	this.hide();
-};
-
-function getCookie(name) {
-	var cookies = document.cookie.split(";");
-	var pair;
-	
-	for (var i = 0; i < cookies.length; i++) {
-		pair = cookies[i].trim().split("=");
-		if (pair[0] == name)
-			return pair[i];
+	if (showHeaderMessage && sessionStorage.getItem("headerDismissed") != "true") {
+		message.text(headerMessageText + " Click to dismiss.");
+		message.removeAttr("style");
 	};
 
-	return false;
+	message.on("click", function() {
+		message.slideUp(200);
+		sessionStorage.setItem("headerDismissed", "true");
+	});
 }
 
-// ----- Footer Rawgit link -----
+function footerRawgitLinkSetup() {
+	var rawgit = $("rawgit"),
+		urlStart = "https://rawgit.com/TomGenco/tomgenco.github.io/dev/",
+		baseUrl = "http://tomgenco.com/";
 
-var footerRawgitLink = document.getElementById("rawgit-link");
-
-footerRawgitLink.setURL = function() {
-	var urlStart = "https://rawgit.com/TomGenco/tomgenco.github.io/dev/";
-	var currentBaseUrl = "http://tomgenco.com/";
-
-	this.removeAttribute("style");
-
-	if (document.URL == currentBaseUrl)
-		this.setAttribute("href", urlStart + "index.html");
+	if (document.URL.search(baseUrl) != 0)
+		return;
+	else if (document.URL == baseUrl)
+		rawgit.attr("href", urlStart + "index.html");
 	else
-		this.setAttribute("href", urlStart + document.URL.slice(currentBaseUrl.length) + ".html");
+		rawgit.attr("href", urlStart + document.URL.slice(baseUrl.length) + ".html");
 }
 
-
-window.onload = function() {
-	var cookies = document.cookie.split(";");
-	
-	if (!getCookie("hideMessage") && showHeaderMessage) {
-		headerMessage.set(headerMessageText);
-		headerMessage.show();
-	}
-
-	if (document.URL.search("http://tomgenco.com/") == 0)
-		footerRawgitLink.setURL();
-}
+$("document").ready(function() {
+	headerMessageSetup();
+	footerRawgitLinkSetup();
+});
