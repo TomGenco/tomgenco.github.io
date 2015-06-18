@@ -58,9 +58,9 @@ function navigationSetup() {
 
 		// Replace Content
 		$("title").text($(this).text());
-		history.pushState(1, "test", 
-			"http://tomgenco.com/" + ((href == "index") ? "/" : href));
 		$("#content").load(href + " #content");
+		history.pushState(1, "test", 
+			"http://tomgenco.com/" + ((href == "index.html") ? "" : href.substring(0, -5)));
 	});
 }
 
