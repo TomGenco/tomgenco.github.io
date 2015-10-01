@@ -1,13 +1,10 @@
 body {
-  padding: 0 10px 10px;
   margin: auto;
   min-width: 580px;
-  max-width: 1900px;
+  max-width: 1920px;
   background-image: url("image/grey.png");
   background-attachment: fixed;
   font-family: Raleway, Verdana, sans-serif;
-  color: rgb(80, 80, 80);
-  text-align: center; /* for the footer and nav bar*/
 }
 
 h1, h2, h3, p, a {
@@ -41,20 +38,24 @@ a:hover {
   text-decoration: underline;
 }
 
-header a, nav, aside, footer {
+header, nav, aside, footer {
+  padding: 10px;
   background-color: rgb(80, 80, 80);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
+  text-align: left;
   color: white;
 }
 
-header, nav, footer {
-  margin: 10px 0;
+header, nav, main, footer {
+  margin: 10px;
 }
 
 header a {
-  display: block;
-  margin: 0;
-  padding: 5px;
+  color: white;
+}
+
+nav {
+  padding: 0;
 }
 
 nav ul {
@@ -88,42 +89,39 @@ nav a:hover {
 }
 
 #content {
-  margin: 10px auto;
+  margin: auto;
   max-width: 1400px;
-  text-align: left;
 }
 
+/* Internet Explorer bug fix */
 main {
   display: block;
-}
-
-article {
   overflow: hidden;
   padding: 20px;
   background-color: rgb(240, 240, 240);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
-  margin-bottom: 10px;
-  font-weight: normal;
-  line-height: 1.6em;
 }
 
 aside {
   float: left;
-  margin: 0 10px 0 0;
-  padding: 10px;
+  margin: 0 10px 10px;
   width: 200px;
+}
+
+#related {
+  float: right;
 }
 
 aside h1 {
   margin: 0;
-  text-align: center;
-  font-size: 1.5em;
   font-weight: normal;
 }
 
 aside hr {
-  border: 1px solid;
   margin: 4px;
+  height: 2px;
+  border: none;
+  background-color: white;
 }
 
 aside ul {
@@ -133,16 +131,12 @@ aside ul {
 }
 
 aside li {
-  margin: 10px 0;
-}
-
-#related {
-  float: right;
-  margin: 0 0 0 10px;
+  margin: .5em 0 0;
 }
 
 footer {
   display: -webkit-flex;
+  display: -moz-flex;
   display: flex;
   padding: 10px;
 }
@@ -159,6 +153,7 @@ footer p {
 
 #center {
   -webkit-flex: 1 0;
+  -moz-flex: 1 0;
   flex: 1 0;
 }
 
