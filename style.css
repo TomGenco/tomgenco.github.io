@@ -128,6 +128,7 @@ footer {
   display: -webkit-flex;
   display: -moz-flex;
   display: flex;
+  clear: both;
 }
 
 footer p {
