@@ -58,6 +58,9 @@ function navigationSetup() {
 		$("#content").load(href + " #content > *");
 		history.pushState(1, "test",
 			"http://tomgenco.com/" + (href == "index.html" ? "" : href.substring(0, href.search(".html"))));
+
+		// Update footer Rawgit link
+		footerRawgitLinkSetup();
 	});
 }
 
