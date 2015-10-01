@@ -42,7 +42,7 @@ header, nav, aside, footer {
   padding: 10px;
   background-color: rgb(80, 80, 80);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
-  text-align: left;
+  text-align: center;
   color: white;
 }
 
