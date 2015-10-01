@@ -1,13 +1,11 @@
 body {
-  padding: 0 10px 10px;
   margin: auto;
   min-width: 580px;
-  max-width: 1900px;
+  max-width: 1400px;
   background-image: url("image/grey.png");
   background-attachment: fixed;
   font-family: Raleway, Verdana, sans-serif;
-  color: rgb(80, 80, 80);
-  text-align: center; /* for the footer and nav bar*/
+  color: rgb(64, 64, 64);
 }
 
 h1, h2, h3, p, a {
@@ -34,27 +32,31 @@ p {
 
 a {
   text-decoration: none;
-  color: rgb(170, 170, 170);
+  color: rgb(160, 160, 160);
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-header a, nav, aside, footer {
-  background-color: rgb(80, 80, 80);
+header, nav, aside, footer {
+  padding: 10px;
+  background-color: rgb(64, 64, 64);
   box-shadow: 0 0 20px rgba(0,0,0,.50);
-  color: white;
+  text-align: center;
+  color: rgb(224, 224, 224);
 }
 
-header, nav, footer {
-  margin: 10px 0;
+header, nav, main, footer {
+  margin: 10px;
 }
 
 header a {
-  display: block;
-  margin: 0;
-  padding: 5px;
+  color: rgb(224, 224, 224);
+}
+
+nav {
+  padding: 0;
 }
 
 nav ul {
@@ -69,13 +71,8 @@ nav li {
   display: table-cell;
 }
 
-.active {
-  background-color: rgb(240, 240, 240);
-  color: rgb(80, 80, 80);
-}
-
 nav a {
-  color: white;
+  color: rgb(224, 224, 224);
   display: block;
   font-size: 2em;
   padding: 10px;
@@ -85,45 +82,27 @@ nav a {
 nav a:hover {
   box-shadow: 0 0 20px rgba(0,0,0,.50);
   text-decoration: none;
+  background-color: rgb(96, 96, 96);
 }
 
-#content {
-  margin: 10px auto;
-  max-width: 1400px;
-  text-align: left;
-}
-
-main {
-  display: block;
-}
-
-article {
-  overflow: hidden;
-  padding: 20px;
-  background-color: rgb(240, 240, 240);
-  box-shadow: 0 0 20px rgba(0,0,0,.50);
-  margin-bottom: 10px;
-  font-weight: normal;
-  line-height: 1.6em;
+nav a.active {
+  background-color: rgb(224, 224, 224);
+  color: rgb(64, 64, 64);
 }
 
 aside {
   float: left;
-  margin: 0 10px 0 0;
-  padding: 10px;
+  margin: 0 10px 10px;
   width: 200px;
+}
+
+#related {
+  float: right;
 }
 
 aside h1 {
   margin: 0;
-  text-align: center;
-  font-size: 1.5em;
   font-weight: normal;
-}
-
-aside hr {
-  border: 1px solid;
-  margin: 4px;
 }
 
 aside ul {
@@ -133,18 +112,22 @@ aside ul {
 }
 
 aside li {
-  margin: 10px 0;
+  margin: .5em 0 0;
 }
 
-#related {
-  float: right;
-  margin: 0 0 0 10px;
+main {
+  /* Internet Explorer bug fix */
+  display: block;
+  overflow: hidden;
+  padding: 20px;
+  background-color: rgb(224, 224, 224);
+  box-shadow: 0 0 20px rgba(0,0,0,.50);
 }
 
 footer {
   display: -webkit-flex;
+  display: -moz-flex;
   display: flex;
-  padding: 10px;
 }
 
 footer p {
@@ -159,6 +142,7 @@ footer p {
 
 #center {
   -webkit-flex: 1 0;
+  -moz-flex: 1 0;
   flex: 1 0;
 }
 
