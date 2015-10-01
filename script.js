@@ -59,7 +59,8 @@ function navigationSetup() {
 
 		// Replace Content
 		$("title").text($(this).text());
-		$("#content").load(href + " #content > *");
+		$("main").load(href + " main > *");
+		$("aside").load(href + " aside > *");
 		history.pushState(1, "test",
 			"http://tomgenco.com/" + (href == "index.html" ? "" : href.substring(0, href.search(".html"))));
 	});
