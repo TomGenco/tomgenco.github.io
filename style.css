@@ -125,28 +125,26 @@ main {
 }
 
 footer {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: flex;
   clear: both;
 }
 
-footer p {
-  margin-bottom: 0;
+footer ul {
+  display: table;
+  table-layout: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   font-size: .8em;
-  text-indent: 0;
 }
 
-#left {
+footer li {
+  display: table-cell;
+}
+
+footer li:first-of-type {
   text-align: left;
 }
 
-#center {
-  -webkit-flex: 1 0;
-  -moz-flex: 1 0;
-  flex: 1 0;
-}
-
-#right {
+footer li:last-of-type {
   text-align: right;
 }
