@@ -2,19 +2,19 @@ body {
   margin: auto;
   min-width: 580px;
   max-width: 1400px;
-  background-image: url("image/grey.png");
+  background-image: url("image/shattered.png");
   background-attachment: fixed;
   font-family: Raleway, Verdana, sans-serif;
-  color: rgb(64, 64, 64);
+  color: rgb(33, 33, 33);
 }
 
 h1, h2, h3, p, a {
   margin: 0 0 .5em;
-  font-weight: normal;
 }
 
 h1 {
-  font-size: 1.8em;
+  color: rgb(63, 81, 181);
+  font-size: 3em;
   font-weight: bold;
 }
 
@@ -32,7 +32,8 @@ p {
 
 a {
   text-decoration: none;
-  color: rgb(160, 160, 160);
+  color: rgb(121, 134, 203);
+  transition: text-decoration .25s;
 }
 
 a:hover {
@@ -41,10 +42,10 @@ a:hover {
 
 header, nav, aside, footer {
   padding: 10px;
-  background-color: rgb(64, 64, 64);
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  background-color: rgb(63, 81, 181);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
-  color: rgb(224, 224, 224);
+  color: rgb(238, 238, 238);
 }
 
 header, nav, main, footer {
@@ -52,7 +53,7 @@ header, nav, main, footer {
 }
 
 header a {
-  color: rgb(224, 224, 224);
+  color: rgb(238, 238, 238);
 }
 
 nav {
@@ -72,22 +73,26 @@ nav li {
 }
 
 nav a {
-  color: rgb(224, 224, 224);
+  color: rgb(238, 238, 238);
+  background-color: rgb(63, 81, 181);
   display: block;
   font-size: 2em;
   padding: 10px;
   margin: 0;
+
+  transition: box-shadow .125s, transform .125s;
 }
 
 nav a:hover {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
   text-decoration: none;
-  background-color: rgb(96, 96, 96);
+
+  transform: scale(1.05);
 }
 
 nav a.active {
-  background-color: rgb(224, 224, 224);
-  color: rgb(64, 64, 64);
+  background-color: rgb(238, 238, 238);
+  color: rgb(33, 33, 33);
 }
 
 aside {
@@ -102,7 +107,9 @@ aside {
 
 aside h1 {
   margin: 0;
+  font-size: 2em;
   font-weight: normal;
+  color: rgb(238, 238, 238);
 }
 
 aside ul {
@@ -120,8 +127,8 @@ main {
   display: block;
   overflow: hidden;
   padding: 20px;
-  background-color: rgb(224, 224, 224);
-  box-shadow: 0 0 20px rgba(0,0,0,.50);
+  background-color: rgb(238, 238, 238);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 footer {
