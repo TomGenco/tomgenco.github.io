@@ -25,10 +25,6 @@ function footerRawgitLinkSetup() {
 		urlStart = "https://rawgit.com/TomGenco/tomgenco.github.io/dev/",
 		baseUrl = "http://tomgenco.com/";
 
-	// If `documentUrl` doesn't start with `baseUrl`
-	if (!documentUrl.search(baseUrl))
-		return;
-
 	rawgit.removeAttr("style");
 
 	if (documentUrl == baseUrl)
