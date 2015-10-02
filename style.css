@@ -33,6 +33,7 @@ p {
 a {
   text-decoration: none;
   color: rgb(160, 160, 160);
+  transition: text-decoration .25s;
 }
 
 a:hover {
@@ -73,16 +74,20 @@ nav li {
 
 nav a {
   color: rgb(224, 224, 224);
+  background-color: rgb(64, 64, 64);
   display: block;
   font-size: 2em;
   padding: 10px;
   margin: 0;
+
+  transition: box-shadow .125s, transform .125s;
 }
 
 nav a:hover {
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3);
   text-decoration: none;
-  background-color: rgb(96, 96, 96);
+
+  transform: scale(1.05);
 }
 
 nav a.active {
