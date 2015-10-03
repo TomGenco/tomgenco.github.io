@@ -28,7 +28,7 @@
       </aside>
       <main>
         <h1>Tom Genco</h1>
-        <p>My personal site. Where I put stuff.</p>
+        <p><span id="greeting">Hi there</span>, welcome to my website. Where I put things and stuff.</p>
       </main>
     </div>
     <footer>
@@ -40,5 +40,6 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script type="text/javascript">var greetings = ["Good morning", "Good afternoon", "Good evening", "Greetings", "Aloha", "Hi there", "Hey there", "Hey you", "Hello"]; $("#greeting").text(greetings[Math.floor(Math.random() * greetings.length)]);</script>
   </body>
 </html>
