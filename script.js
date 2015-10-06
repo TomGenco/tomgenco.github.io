@@ -64,8 +64,17 @@ function navigationSetup() {
 	});
 }
 
+function greetingSetup() {
+	$("#greeting").ready(function () {
+		var greetings = ["Good morning", "Good afternoon", "Good evening", "Greetings", "Aloha", "Hi there", "Hey there", "Hey you", "Hello"];
+
+		$("#greeting").text(greetings[Math.floor(Math.random() * greetings.length)]);
+	});
+}
+
 $("document").ready(function() {
 	headerMessageSetup();
+	greetingSetup();
 	if (!document.URL.search("http://tomgenco.com/")) {
 		footerRawgitLinkSetup();
 		navigationSetup();
