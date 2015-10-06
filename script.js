@@ -55,7 +55,9 @@ function navigationSetup() {
 
 		// Replace Content
 		$("title").text($(this).text());
-		$("#content").load(href + " #content > *");
+		$("#content").load(href + " #content > *", undefined, function () {
+			greetingSetup();
+		});
 		history.pushState(1, "test",
 			"http://tomgenco.com/" + (href == "index.html" ? "" : href.substring(0, href.search(".html"))));
 
@@ -65,11 +67,11 @@ function navigationSetup() {
 }
 
 function greetingSetup() {
-	$("#greeting").ready(function () {
+	if ($("#greeting").length) {
 		var greetings = ["Good morning", "Good afternoon", "Good evening", "Greetings", "Aloha", "Hi there", "Hey there", "Hey you", "Hello"];
 
 		$("#greeting").text(greetings[Math.floor(Math.random() * greetings.length)]);
-	});
+	}
 }
 
 $("document").ready(function() {
