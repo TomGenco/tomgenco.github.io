@@ -54,7 +54,7 @@ function navigationSetup() {
 		$(this).attr("class", "active");
 
 		// Replace Content
-		$("title").text($(this).text());
+		$("title").text($(this).text() + " - tomgenco.com");
 		$("#content").load(href + " #content > *", undefined, function () {
 			greetingSetup();
 		});
