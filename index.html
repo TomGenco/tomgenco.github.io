@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="image/favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   </head>
   <body>
     <header style="display:none">
@@ -30,6 +31,7 @@
         <h1>Tom Genco</h1>
         <p><span id="greeting">Hi there</span>, welcome to my website. Where I put things and stuff.</p>
       </main>
+      <script type="text/javascript">var greetings = ["Good morning", "Good afternoon", "Good evening", "Greetings", "Aloha", "Hi there", "Hey there", "Hey you", "Hello"]; $("#greeting").text(greetings[Math.floor(Math.random() * greetings.length)]);</script>
     </div>
     <footer>
       <ul>
@@ -38,8 +40,6 @@
         <li>Hosted by <a href="https://github.com/TomGenco/tomgenco.github.io">Github</a>.<br /><a id="rawgit" style="display:none">Most recent version of this page.</a></li>
       </ul>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="script.js"></script>
-    <script type="text/javascript">var greetings = ["Good morning", "Good afternoon", "Good evening", "Greetings", "Aloha", "Hi there", "Hey there", "Hey you", "Hello"]; $("#greeting").text(greetings[Math.floor(Math.random() * greetings.length)]);</script>
   </body>
 </html>
