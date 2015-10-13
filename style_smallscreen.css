@@ -44,8 +44,6 @@ nav {
 }
 
 nav ul {
-  display: flex;
-  flex-flow: column;
   margin: 0;
   padding: 0;
 }
