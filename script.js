@@ -1,7 +1,7 @@
 var showHeaderMessage = true;
 var headerMessageText = "Site is currently under construction. Expect constant changes to style, structure, and content.";
 var atRealUrl = !document.URL.search("http://tomgenco.com/");
-var smallScreen = false;
+var smallScreen = false, forceDesktop = false;
 
 // If `showHeaderMessage` at the top is set to true, and the session storage
 // doesn't have a `headerDismissed` key, then a header will be shown that contains
@@ -129,16 +129,37 @@ function navRevertToNormalStyle() {
 		navigationSetup();
 }
 
+function footerDesktopLinkSetup() {
+	$("<li id=\"desktop\" ><a href=\"\">Desktop Version</a></li>")
+		.insertAfter("footer li:last-of-type")
+		.click(function (event) {
+			event.preventDefault();
+			forceDesktop = true;
+			smallScreen = false;
+			navRevertToNormalStyle();
+			footerRemoveDesktopLink();
+			$("link[href='style.css']").removeAttr("media");
+			$("link[href='style_smallscreen.css']").remove();
+		});
+}
+
+function footerRemoveDesktopLink() {
+	$("#desktop").remove();
+}
+
 window.onresize = updateScreenSize;
 
 function updateScreenSize() {
-	if (window.innerWidth < 600 && !smallScreen) {
+	if ((window.innerWidth < 700 && !forceDesktop) && !smallScreen) {
 		smallScreen = true;
 		navSmallscreenStyleSetup();
+		footerDesktopLinkSetup();
 	}
-	else if (window.innerWidth >= 600 && smallScreen) {
+	else if ((window.innerWidth >= 700 || forceDesktop) && smallScreen) {
 		smallScreen = false;
 		navRevertToNormalStyle();
+		footerRemoveDesktopLink();
+
 	}
 }
 
