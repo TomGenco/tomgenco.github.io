@@ -39,6 +39,7 @@ header a:hover {
 
 nav {
   margin: 10px;
+  background-color: #193441;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
   border-radius: 3px;
 }

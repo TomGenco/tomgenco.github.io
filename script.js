@@ -158,12 +158,12 @@ function footerRemoveDesktopLink() {
 window.onresize = updateScreenSize;
 
 function updateScreenSize() {
-	if ((window.innerWidth < 700 && !forceDesktop) && !smallScreen) {
+	if ((window.outerWidth < 700 && !forceDesktop) && !smallScreen) {
 		smallScreen = true;
 		navSmallscreenStyleSetup();
 		footerDesktopLinkSetup();
 	}
-	else if ((window.innerWidth >= 700 || forceDesktop) && smallScreen) {
+	else if ((window.outerWidth >= 700 || forceDesktop) && smallScreen) {
 		smallScreen = false;
 		navRevertToNormalStyle();
 		footerRemoveDesktopLink();
