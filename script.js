@@ -51,7 +51,7 @@ function navigationSetup() {
 			return;
 
 		if (smallScreen)
-			$(this).off("click.toggleNav");
+			$(".active").off("click.toggleNav");
 
 		// Change active to selected page
 		$(".active").removeAttr("class");
@@ -66,10 +66,7 @@ function navigationSetup() {
 			"http://tomgenco.com/" + (href == "index.html" ? "" : href.substring(0, href.search(".html"))));
 
 		if (smallScreen) {
-			// This link doesn't control the navbar anymore
-			$(this).off("click.toggleNav");
-
-			// This one does
+			// This one controls the navbar now
 			$("nav a.active").on("click.toggleNav", toggleNav);
 
 			// Close the navbar after navigation
