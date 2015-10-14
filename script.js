@@ -50,6 +50,9 @@ function navigationSetup() {
 		if ($(this).attr("class") == "active")
 			return;
 
+		if (smallScreen)
+			$(this).off("click.toggleNav");
+
 		// Change active to selected page
 		$(".active").removeAttr("class");
 		$(this).attr("class", "active");
@@ -63,6 +66,12 @@ function navigationSetup() {
 			"http://tomgenco.com/" + (href == "index.html" ? "" : href.substring(0, href.search(".html"))));
 
 		if (smallScreen) {
+			// This link doesn't control the navbar anymore
+			$(this).off("click.toggleNav");
+
+			// This one does
+			$("nav a.active").on("click.toggleNav", toggleNav);
+
 			// Close the navbar after navigation
 			$("nav a.active").attr("style", "border-radius:3px");
 			$("nav a")
@@ -101,24 +110,26 @@ function navSmallscreenStyleSetup() {
 	$("nav a.active").html($("nav a.active").html() + "<span style=\"float:right;padding-right:5px;\">▼</span>");
 
 	// Clicking the active nav items toggles the rest
-	$("nav a.active").on("click", function (event) {
-		event.preventDefault();
+	$("nav a.active").on("click.toggleNav", toggleNav);
 
-		// Fix the rounded edges and triangle
-		if ($("nav a:hidden").length) {
-			$("nav a.active").removeAttr("style");
-			$("nav span").text("▲");
-		} else {
-			$("nav a.active").attr("style", "border-radius:3px");
-			$("nav span").text("▼");
-		}
+}
 
-		$("nav a")
-			.not("[class='active']")
-			.parent()
-			.slideToggle(125);
-	});
+function toggleNav(event) {
+	event.preventDefault();
 
+	// Fix the rounded edges and triangle
+	if ($("nav a:hidden").length) {
+		$("nav a.active").removeAttr("style");
+		$("nav span").text("▲");
+	} else {
+		$("nav a.active").attr("style", "border-radius:3px");
+		$("nav span").text("▼");
+	}
+
+	$("nav a")
+		.not("[class='active']")
+		.parent()
+		.slideToggle(125);
 }
 
 function navRevertToNormalStyle() {
