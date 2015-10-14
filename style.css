@@ -10,7 +10,7 @@ body {
 }
 
 /* HACK: Prevent font boosting in webkit */
-body * {
+p {
   max-height: 1000000em;
 }
 
