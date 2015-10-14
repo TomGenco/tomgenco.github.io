@@ -1,18 +1,12 @@
-body {
+html {
   font-size: 16px;
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  margin: auto;
-  min-width: 700px;
-  max-width: 1400px;
-  font-family: "Raleway", sans-serif;
-  background-color: #D1DBBD;
 }
 
-/* HACK: Prevent font boosting in webkit */
-p {
-  max-height: 1000000em;
+body {
+  margin: auto;
+  min-width: 320px;
+  background-color: #D1DBBD;
+  font-family: "Raleway", sans-serif;
 }
 
 ::selection {
@@ -50,35 +44,32 @@ nav {
 }
 
 nav ul {
-  display: flex;
   margin: 0;
   padding: 0;
 }
 
 nav li {
-  flex: 1;
   list-style: none;
 }
 
 nav a {
   display: block;
   padding: 10px;
-  font-size: 32px;
+  font-size: 36px;
   text-align: center;
   text-decoration: none;
   background-color: #193441;
   color: #FCFFF5;
-
   transition: box-shadow .125s, transform .125s;
 }
 
 nav li:first-of-type a {
   border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 nav li:last-of-type a {
-  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
 
@@ -94,31 +85,29 @@ nav a.active {
   color: #193441;
 }
 
-img {
-  float: left;
-  width: 300px;
-  margin: 10px;
-}
-
 aside {
-  float: left;
-  margin: 0 10px 10px;
-  padding: 0;
-  max-width: 400px;
+  margin: 10px;
+  padding: 10px;
   background-color: #91AA9D;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
   text-align: center;
   border-radius: 3px;
 }
 
+aside img {
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+}
+
 aside.related {
-  float: right;
+
 }
 
 aside h1 {
-  margin: 0;
+  margin: -10px -10px 0;
   padding: 10px;
-  font-size: 2em;
+  font-size: 36px;
   font-weight: normal;
   background-color: #193441;
   border-top-left-radius: 3px;
@@ -127,9 +116,9 @@ aside h1 {
 }
 
 aside ul {
-  list-style: none;
-  padding: 10px;
   margin: 0;
+  padding: 10px 10px 0;
+  list-style: none;
 }
 
 aside a {
@@ -142,7 +131,6 @@ aside a:hover {
 }
 
 main {
-  /* Internet Explorer bug fix */
   display: block;
   overflow: hidden;
   margin: 10px;
@@ -154,21 +142,21 @@ main {
 
 main h1 {
   margin: 0;
-  padding: 10px 20px;
-  font-size: 5em;
+  padding: 10px;
+  font-size: 36px;
   font-weight: normal;
+  text-align: center;
   background-color: #3E606F;
   color: #FCFFF5;
 }
 
 main h2 {
   margin: 10px;
-  font-size: 1.4em;
+  font-size: 24px;
 }
 
 main p {
-  margin: 15px;
-  text-indent: 1em;
+  margin: 10px 20px 20px;
 }
 
 main a {
@@ -183,7 +171,6 @@ main a:hover {
 }
 
 footer {
-  clear: both;
   margin: 10px;
   padding: 10px;
   background-color: #193441;
@@ -192,26 +179,21 @@ footer {
 }
 
 footer ul {
-  display: table;
-  table-layout: fixed;
+  display: flex;
+  flex-flow: column;
   margin: 0;
   padding: 0;
   width: 100%;
-  font-size: .9em;
 }
 
 footer li {
-  display: table-cell;
-  text-align: center;
+  margin-bottom: 10px;
+  list-style: none;
   color: #FCFFF5;
 }
 
-footer li:first-of-type {
-  text-align: left;
-}
-
 footer li:last-of-type {
-  text-align: right;
+  margin: 0;
 }
 
 footer a {

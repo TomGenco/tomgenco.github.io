@@ -1,6 +1,7 @@
 var showHeaderMessage = true;
-var headerMessageText = "Site is currently under construction. " +
-	"Expect constant changes to style, structure, and content.";
+var headerMessageText = "Site is currently under construction. Expect constant changes to style, structure, and content.";
+var atRealUrl = !document.URL.search("http://tomgenco.com/");
+var smallScreen = false, forceDesktop = false;
 
 // If `showHeaderMessage` at the top is set to true, and the session storage
 // doesn't have a `headerDismissed` key, then a header will be shown that contains
@@ -61,6 +62,19 @@ function navigationSetup() {
 		history.pushState(1, "test",
 			"http://tomgenco.com/" + (href == "index.html" ? "" : href.substring(0, href.search(".html"))));
 
+		if (smallScreen) {
+			// Close the navbar after navigation
+			$("nav a.active").attr("style", "border-radius:3px");
+			$("nav a")
+				.not("[class='active']")
+				.parent()
+				.slideUp(125);
+
+			// Put the triangle on the new active
+			$("nav span").remove();
+			$("nav a.active").html($("nav a.active").html() + "<span style=\"float:right;padding-right:5px;\">▼</span>");
+		}
+
 		// Update footer Rawgit link
 		footerRawgitLinkSetup();
 	});
@@ -74,10 +88,86 @@ function greetingSetup() {
 	}
 }
 
+function navSmallscreenStyleSetup() {
+	// Initially hide non-active nav items
+	$("nav a").not("[class='active']")
+						.parent()
+						.attr("style", "display:none");
+
+	// Give active nav link rounded edges
+	$("nav a.active").attr("style","border-radius:3px");
+
+	// Add a triangle icon
+	$("nav a.active").html($("nav a.active").html() + "<span style=\"float:right;padding-right:5px;\">▼</span>");
+
+	// Clicking the active nav items toggles the rest
+	$("nav a.active").on("click", function (event) {
+		event.preventDefault();
+
+		// Fix the rounded edges and triangle
+		if ($("nav a:hidden").length) {
+			$("nav a.active").removeAttr("style");
+			$("nav span").text("▲");
+		} else {
+			$("nav a.active").attr("style", "border-radius:3px");
+			$("nav span").text("▼");
+		}
+
+		$("nav a")
+			.not("[class='active']")
+			.parent()
+			.slideToggle(125);
+	});
+
+}
+
+function navRevertToNormalStyle() {
+	$("nav li, nav a").removeAttr("style");
+	$("nav a").off("click");
+	$("nav span").remove();
+	if (atRealUrl)
+		navigationSetup();
+}
+
+function footerDesktopLinkSetup() {
+	$("<li id=\"desktop\" ><a href=\"\">Desktop Version</a></li>")
+		.insertAfter("footer li:last-of-type")
+		.click(function (event) {
+			event.preventDefault();
+			forceDesktop = true;
+			smallScreen = false;
+			navRevertToNormalStyle();
+			footerRemoveDesktopLink();
+			$("link[href='style.css']").removeAttr("media");
+			$("link[href='style_smallscreen.css']").remove();
+		});
+}
+
+function footerRemoveDesktopLink() {
+	$("#desktop").remove();
+}
+
+window.onresize = updateScreenSize;
+
+function updateScreenSize() {
+	if ((window.innerWidth < 700 && !forceDesktop) && !smallScreen) {
+		smallScreen = true;
+		navSmallscreenStyleSetup();
+		footerDesktopLinkSetup();
+	}
+	else if ((window.innerWidth >= 700 || forceDesktop) && smallScreen) {
+		smallScreen = false;
+		navRevertToNormalStyle();
+		footerRemoveDesktopLink();
+
+	}
+}
+
 $("document").ready(function() {
+	updateScreenSize();
 	headerMessageSetup();
 	greetingSetup();
-	if (!document.URL.search("http://tomgenco.com/")) {
+	if (atRealUrl) {
 		footerRawgitLinkSetup();
 		navigationSetup();
 	}
