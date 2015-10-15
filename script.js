@@ -155,24 +155,25 @@ function footerRemoveDesktopLink() {
 	$("#desktop").remove();
 }
 
-window.onresize = updateScreenSize;
+window.onresize = handleResize;
 
-function updateScreenSize() {
-	if ((window.outerWidth < 700 && !forceDesktop) && !smallScreen) {
+function handleResize() {
+	// If the screen is small, and we arent forcing desktop style, but smallscreen is false...
+	if ((window.matchMedia("(max-width: 699px)") && !forceDesktop) && !smallScreen) {
 		smallScreen = true;
 		navSmallscreenStyleSetup();
 		footerDesktopLinkSetup();
 	}
-	else if ((window.outerWidth >= 700 || forceDesktop) && smallScreen) {
+	// If the screen isn't small, or we're forcing desktop style, but smallscreen is true...
+	else if ((window.matchMedia("(min-width:700px)") || forceDesktop) && smallScreen) {
 		smallScreen = false;
 		navRevertToNormalStyle();
 		footerRemoveDesktopLink();
-
 	}
 }
 
 $("document").ready(function() {
-	updateScreenSize();
+	handleResize();
 	headerMessageSetup();
 	greetingSetup();
 	if (atRealUrl) {
