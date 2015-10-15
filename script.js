@@ -159,13 +159,13 @@ window.onresize = handleResize;
 
 function handleResize() {
 	// If the screen is small, and we arent forcing desktop style, but smallscreen is false...
-	if ((window.matchMedia("(max-width: 699px)") && !forceDesktop) && !smallScreen) {
+	if ((window.matchMedia("(max-width: 699px)").matches && !forceDesktop) && !smallScreen) {
 		smallScreen = true;
 		navSmallscreenStyleSetup();
 		footerDesktopLinkSetup();
 	}
 	// If the screen isn't small, or we're forcing desktop style, but smallscreen is true...
-	else if ((window.matchMedia("(min-width:700px)") || forceDesktop) && smallScreen) {
+	else if ((window.matchMedia("(min-width:700px)").matches || forceDesktop) && smallScreen) {
 		smallScreen = false;
 		navRevertToNormalStyle();
 		footerRemoveDesktopLink();
