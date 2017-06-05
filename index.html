@@ -1,46 +1,33 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="Tom Genco's Personal Website.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home - tomgenco.com</title>
-    <link rel="stylesheet" media="(min-width : 700px)" type="text/css" href="style.css">
-    <link rel="stylesheet" media="(max-width : 699px)" type="text/css" href="style_smallscreen.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/png" href="image/favicon.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <title>Tom Genco</title>
+    <style>body {
+  margin-top: 25%;
+  background-color: #222;
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+  font-size: 7vw;
+  color: #888;
+}
+
+a {
+  text-decoration: none;
+}
+
+#about { color: #8b8; }
+#about:active { color: #4f4; }
+#twitter { color: #8ab; }
+#twitter:active { color: #4cf; }
+#projects { color: #ba8; }
+#projects:active { color: #fc4; }</style>
   </head>
   <body>
-    <header style="display:none">
-      <a id="message" href="#"></a>
-    </header>
-    <nav>
-      <ul>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="info.html">Info</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="links.html">Links</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div id="content">
-      <aside>
-        <img src="image/me.jpg">
-      </aside>
-      <main>
-        <h1>Tom Genco</h1>
-        <p><span id="greeting">Hi there</span>, welcome to my website. Where I put things and stuff.</p>
-      </main>
-    </div>
-    <footer>
-      <ul>
-        <li>Last modified on 2015-10-02.<br /><a href="mailto:tomjgenco@gmail.com">Email me.</a></li>
-        <li>My Bitcoin address will replace this text soon.</li>
-        <li>Hosted by <a href="https://github.com/TomGenco/tomgenco.github.io">Github</a>.<br /><a id="rawgit" style="display:none">Most recent version of this page.</a></li>
-      </ul>
-    </footer>
-    <script src="script.js"></script>
+    <h1><a id="about" title="About" href="about">tom</a><a id="twitter" title="Twitter" href="https://twitter.com/tomgenco">@tomgenco</a>.com<a id="projects" title="Projects" href="projects">/…</a></h1>
   </body>
 </html>
