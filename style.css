@@ -1,0 +1,54 @@
+body {
+  background-color: #444;
+  color: #444;
+  font-family: Ubuntu, monospace;
+  font-size: 36px;
+  word-wrap: break-word;
+}
+
+::selection {
+  color: #bbb;
+  background-color: #545454;
+}
+
+::-moz-selection {
+  color: #bbb;
+  background-color: #545454;
+}
+
+main {
+  padding: 8px;
+  margin: auto;
+  background-color: #bbb;
+  min-height: -webkit-calc(100vh - 32px);
+  min-height: -moz-calc(100vh - 32px);
+  min-height: calc(100vh - 32px);
+  max-width: 960px;
+}
+
+h2 {
+  margin: 8px 0 0 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #666;
+}
+
+ul {
+  margin: 0 0 0 32px;
+  padding: 0;
+  list-style: none;
+}
+
+li::before {
+  content: '├ ';
+}
+
+li:last-of-type::before {
+  content: '└ ';
+}
