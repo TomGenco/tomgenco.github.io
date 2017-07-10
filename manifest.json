@@ -1,0 +1,32 @@
+{
+  "name": "tomgenco.com",
+  "short_name": "tom",
+  "start_url": ".",
+  "display": "minimal-ui",
+  "background_color": "#444",
+  "description": "Tom Genco's website.",
+  "lang": "en-US",
+  "theme_color": "#444",
+  "icons": [
+    {
+      "src": "icon/16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "icon/32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "icon/64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "icon/128.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "icon/256.png",
+      "sizes": "256x256"
+    }
+  ]
+}
