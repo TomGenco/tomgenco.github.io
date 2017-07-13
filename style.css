@@ -1,8 +1,6 @@
 body {
   margin: 0;
   background-color: #444;
-  color: #444;
-  font: 6.5vw monospace;
   word-wrap: break-word;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -20,15 +18,28 @@ body {
   background-color: #545454;
 }
 
-nav {
+h1, h2, nav {
   margin: auto;
-  padding: 0.5em;
-  background-color: #bbb;
+  padding: 0 0.5em;
   max-width: 980px;
+  background-color: #bbb;
+  color: #444;
+  font-family: monospace;
 }
 
 h1 {
-  margin: 0;
+  padding-top: 0.5em;
+  font-weight: bold;
+  font-size: 6.5vw;
+}
+
+h2 {
+  font-size: 3.25vw;
+  padding: 0.5em 1em;
+}
+
+nav {
+  padding-bottom: 0.5em;
   font-size: 6.5vw;
 }
 
@@ -37,10 +48,13 @@ a {
   color: inherit;
 }
 
-a:hover, a:focus {
+a:hover {
   color: #666;
-  outline: none;
   -webkit-tap-highlight-color: hsla(0, 0%, 40%, 0.5);
+}
+
+a:focus {
+  outline-color: #444;
 }
 
 ul {
@@ -51,12 +65,28 @@ ul {
 
 li::before {
   content: '├';
-  margin: 0 0.5em 0 0;
 }
 
 li:last-of-type::before {
   content: '└';
-  margin: 0 0.5em 0 0;
+}
+
+p {
+  margin: 0 0.5cm;
+  padding: 0 0.5cm 1em;
+  background-color: #bbb;
+  color: #444;
+  text-align: justify;
+  font-family: sans-serif;
+}
+
+p:first-of-type {
+  margin-top: 0.5cm;
+  padding-top: 0.5cm;
+}
+
+p:last-of-type {
+  margin-bottom: 0.5cm;;
 }
 
 .directory::after {
@@ -70,8 +100,23 @@ li:last-of-type::before {
   content: '^';
 }
 
+#t, li::before {
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+}
+
+#t {
+  background-color: #444;
+  color: #bbb;
+}
+
 @media (min-width: 980px) {
-  body, h1 {
+  h1, nav {
     font-size: 64px;
+  }
+
+  h2 {
+    font-size: 32px;
   }
 }
