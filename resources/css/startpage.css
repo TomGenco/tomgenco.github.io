@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("/resources/fonts/roboto-regular.woff2")
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  src: url("/resources/fonts/roboto-medium.woff2")
+}
+
+body {
+  margin: 56px auto;
+  width: 535px;
+  background-color: #f1f1f1;
+  font-family: Roboto;
+  font-size: 13px;
+  color: rgb(33, 33, 33);
+  line-height: 154%;
+  overflow-y: scroll;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  background-color: rgb(197, 57, 41);
+  color: white;
+}
+
+nav > h1 {
+  margin: 0 0 0 56px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#nav-shadow {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  opacity: 0;
+  box-shadow: inset 0 5px 6px -3px rgba(0, 0, 0, 0.4);
+  transition: opacity 500ms;
+}
+
+#nav-shadow.visible {
+  opacity: 1;
+}
+
+.category {
+  margin: 0 3px 3px;
+}
+
+.category > h1 {
+  margin: 0;
+  padding: 21px 0 11px;
+  font-size: 13px;
+  color: rgb(97, 97, 97);
+  font-weight: 500;
+
+}
+
+.item-list {
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
+              rgba(0, 0, 0, 0.12) 0px 1px 5px 0px,
+              rgba(0, 0, 0, 0.2) 0px 3px 1px -2px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: initial;
+  background: url("/resources/images/open_in_new.svg") no-repeat 20px 20px;
+  background-position: calc(100% - 22px);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 20px 0 4px;
+}
+
+.text {
+  flex: 1 1 auto;
+}
+
+.text > p {
+  margin: 0;
+}
+
+.url {
+  color: rgb(117, 117, 117);
+}
+
+.external-icon {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}
+
+@media (min-width: 576px) {
+  body {
+    margin: 56px 13px 0;
+    width: auto;
+  }
+}
+
+@media (min-width: 715px) {
+  body {
+    margin: 56px auto 0;
+    max-width: 673px;
+  }
+}

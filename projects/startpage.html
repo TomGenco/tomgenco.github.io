@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/resources/images/google.png">
+    <title>Start Page</title>
+    <link rel="stylesheet" href="/resources/css/startpage.css">
+  </head>
+  <body>
+    <nav>
+      <h1>Start Page</h1>
+    </nav>
+    <div id=nav-shadow></div>
+    <div class="category">
+      <h1>Google Apps</h1>
+      <div class="item-list">
+        <a class="item" href="https://calendar.google.com" target="_blank">
+          <img class="icon" src="https://calendar.google.com/googlecalendar/images/favicon_v2014_24.ico">
+          <div class="text">
+            <p class="title">Google Calendar</p>
+            <p class="url">https://calendar.google.com</p>
+          </div>
+        </a>
+        <a class="item" href="https://contacts.google.com" target="_blank">
+          <img class="icon" src="https://ssl.gstatic.com/images/branding/product/1x/contacts_64dp.png">
+          <div class="text">
+            <p class="title">Google Contacts</p>
+            <p class="url">https://contacts.google.com</p>
+          </div>
+        </a>
+        <a class="item" href="https://drive.google.com" target="_blank">
+          <img class="icon" src="https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_4.ico">
+          <div class="text">
+            <p class="title">Google Drive</p>
+            <p class="url">https://drive.google.com</p>
+          </div>
+        </a>
+        <a class="item" href="https://fit.google.com" target="_blank">
+          <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/6/60/Google-Fit-Icon.png">
+          <div class="text">
+            <p class="title">Google Fit</p>
+            <p class="url">https://fit.google.com</p>
+          </div>
+        </a>
+        <a class="item" href="https://inbox.google.com" target="_blank">
+          <img class="icon" src="https://www.google.com/inbox/assets/images/common/logo-nav.png">
+          <div class="text">
+            <p class="title">Google Inbox</p>
+            <p class="url">https://inbox.google.com</p>
+          </div>
+        </a>
+        <a class="item" href="https://www.google.com/maps" target="_blank">
+          <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/2/23/GoogleMaps.svg">
+          <div class="text">
+            <p class="title">Google Maps</p>
+            <p class="url">https://www.google.com/maps</p>
+          </div>
+        </a>
+        <a class="item" href="https://photos.google.com" target="_blank">
+          <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Google_Photos_icon.svg">
+          <div class="text">
+            <p class="title">Google Photos</p>
+            <p class="url">https://photos.google.com</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h1>News</h1>
+      <div class="item-list">
+        <a class="item" href="https://www.nytimes.com" target="_blank">
+          <img class="icon" src="https://static01.nyt.com/favicon.ico">
+          <div class="text">
+            <p class="title">The New York Times</p>
+            <p class="url">https://www.nytimes.com</p>
+          </div>
+        </a>
+        <a class="item" href="https://www.vox.com" target="_blank">
+          <img class="icon" src="https://cdn0.vox-cdn.com/uploads/hub/sbnu_logo_minimal/441/touch_icon_iphone_retina_1000_yellow.755.png">
+          <div class="text">
+            <p class="title">Vox</p>
+            <p class="url">https://www.vox.com</p>
+          </div>
+        </a>
+        <a class="item" href="https://www.washingtonpost.com" target="_blank">
+          <img class="icon" src="https://www.washingtonpost.com/favicon.ico">
+          <div class="text">
+            <p class="title">The Washington Post</p>
+            <p class="url">https://www.washingtonpost.com</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h1>Local News</h1>
+      <div class="item-list">
+        <a class="item" href="http://www.abc15.com" target="_blank">
+          <img class="icon" src="http://media.scrippsnationalnews.com/cms/images/color_schemes/knxv/favicon.ico?v=20170502-140940.2.1.24">
+          <div class="text">
+            <p class="title">abc 15</p>
+            <p class="url">http://www.abc15.com</p>
+          </div>
+        </a>
+        <a class="item" href="https://www.azcentral.com" target="_blank">
+          <img class="icon" src="https://www.gannett-cdn.com/sites/azcentral/images/favicon.png">
+          <div class="text">
+            <p class="title">azcentral</p>
+            <p class="url">https://www.azcentral.com</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var shadow = document.getElementById('nav-shadow');
+
+      window.addEventListener("scroll", function() {
+        if (document.body.scrollTop)
+          shadow.className = "visible";
+        else
+          shadow.className = "";
+      });
+    </script>
+  </body>
+</html>
